@@ -1,11 +1,11 @@
-import "./Header.css";
+import stl from "./Header.module.css";
 
 function Header() {
   return (
-    <header className="header">
+    <header className={stl.header}>
       <a href="#">
         <img
-          className="logo-img"
+          className={stl.logoimg}
           src="https://logos-world.net/wp-content/uploads/2020/04/Huawei-Logo.png"
           alt="logo"
         />

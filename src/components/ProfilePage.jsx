@@ -1,42 +1,42 @@
-import "./ProfilePage.css";
+import stl from "./ProfilePage.module.css";
 
 function ProfilePage() {
   return (
-    <div className="main-content">
+    <div className={stl.maincontent}>
       <div>
         <img
-          className="main-content-img"
+          className={stl.maincontentimg}
           src="https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg"
           alt="main-content-img"
         />
       </div>
-      <div className="profile">
+      <div className={stl.profile}>
         <img
-          className="content-img"
+          className={stl.contentimg}
           src="https://www.thisiscolossal.com/wp-content/uploads/2019/02/moon_crop.jpg"
           alt="content-img"
         />
-        <div className="description">
+        <div className={stl.description}>
           <h2>Это луна</h2>
           <p>Здесь всякое описание этой луны</p>
           <p>Ей очень много лет</p>
           <p>И у нее нет телефона</p>
         </div>
       </div>
-      <div className="posts">
-        <p className="post-title">My posts</p>
+      <div className={stl.posts}>
+        <p className={stl.poststitle}>My posts</p>
         <div>
           <form action="">
             <textarea
-              className="input"
+              className={stl.input}
               name="enterpost"
               id="enterpost"
               cols="70"
               rows="3"
               placeholder="Ваши новости..."
             ></textarea>
-            <button className="btn-h" type="submit"></button>
-            <button className="btn" type="submit">
+            <button className={stl.btnh} type="submit"></button>
+            <button className={stl.btn} type="submit">
               Отправить
             </button>
           </form>

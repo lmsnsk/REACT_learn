@@ -1,4 +1,4 @@
-.side-bar {
+.sidebar {
   grid-area: side;
   background-color: green;
   padding: 10px 10px;
@@ -9,15 +9,15 @@
   height: 600px;
 }
 
-.side-bar a {
+.sidebar a {
   text-decoration-line: none;
   color: white;
 }
 
-.list-nav {
+.listnav {
   padding: 0px;
 }
 
-.list-nav-point {
+.listnavpoint {
   list-style: inside none;
 }
