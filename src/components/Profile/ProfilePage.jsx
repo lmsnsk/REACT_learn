@@ -19,9 +19,9 @@ function ProfilePage() {
         />
         <div className={stl.description}>
           <h2>Это луна</h2>
-          <p>Здесь всякое описание этой луны</p>
-          <p>Ей очень много лет</p>
-          <p>И у нее нет телефона</p>
+          <p className={stl.decrtext}>Здесь всякое описание этой луны</p>
+          <p className={stl.decrtext}>Ей очень много лет</p>
+          <p className={stl.decrtext}>И у нее нет телефона</p>
         </div>
       </div>
       <MyPosts />
