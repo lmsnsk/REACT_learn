@@ -1,3 +1,5 @@
+import "./ProfilePage.css";
+
 function ProfilePage() {
   return (
     <div className="main-content">
@@ -5,12 +7,14 @@ function ProfilePage() {
         <img
           className="main-content-img"
           src="https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg"
+          alt="main-content-img"
         />
       </div>
       <div className="profile">
         <img
           className="content-img"
           src="https://www.thisiscolossal.com/wp-content/uploads/2019/02/moon_crop.jpg"
+          alt="content-img"
         />
         <div className="description">
           <h2>Это луна</h2>

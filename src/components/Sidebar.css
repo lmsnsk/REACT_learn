@@ -1,0 +1,23 @@
+.side-bar {
+  grid-area: side;
+  background-color: green;
+  padding: 10px 10px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 20px;
+  line-height: 50px;
+  font-weight: 400;
+  height: 600px;
+}
+
+.side-bar a {
+  text-decoration-line: none;
+  color: white;
+}
+
+.list-nav {
+  padding: 0px;
+}
+
+.list-nav-point {
+  list-style: inside none;
+}
