@@ -1,3 +1,4 @@
+import MyPosts from "./MyPosts/MyPosts";
 import stl from "./ProfilePage.module.css";
 
 function ProfilePage() {
@@ -23,29 +24,7 @@ function ProfilePage() {
           <p>И у нее нет телефона</p>
         </div>
       </div>
-      <div className={stl.posts}>
-        <p className={stl.poststitle}>My posts</p>
-        <div>
-          <form action="">
-            <textarea
-              className={stl.input}
-              name="enterpost"
-              id="enterpost"
-              cols="70"
-              rows="3"
-              placeholder="Ваши новости..."
-            ></textarea>
-            <button className={stl.btnh} type="submit"></button>
-            <button className={stl.btn} type="submit">
-              Отправить
-            </button>
-          </form>
-          <ul>
-            <li>Привет, почему так грустно?</li>
-            <li>Есть кто дома?</li>
-          </ul>
-        </div>
-      </div>
+      <MyPosts />
     </div>
   );
 }

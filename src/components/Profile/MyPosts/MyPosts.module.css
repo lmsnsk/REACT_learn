@@ -1,34 +1,3 @@
-.maincontent {
-  grid-area: cont;
-}
-
-.maincontent li::marker {
-  color: rgb(232, 241, 132);
-  width: 16px;
-}
-
-.maincontentimg {
-  width: 100%;
-}
-
-.profile {
-  display: grid;
-  grid-template-areas: "lf dscr";
-  grid-template-columns: 200px 1fr;
-  grid-gap: 5px;
-}
-
-.contentimg {
-  width: 100%;
-  grid-area: lf;
-}
-
-.description {
-  grid-area: dscr;
-  text-align: left;
-  padding-left: 20px;
-}
-
 .posts {
   position: relative;
   margin-left: 20px;
