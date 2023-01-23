@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import stl from "./Sidebar.module.css";
 
 function Sidebar() {
@@ -5,20 +6,20 @@ function Sidebar() {
     <nav className={stl.sidebar}>
       <ul className={stl.listnav}>
         <li className={stl.listnavpoint}>
-          <a href="#">Profile</a>
+          <NavLink to="/ProfilePage">Profile</NavLink>
         </li>
         <li className={stl.listnavpoint}>
-          <a href="#">Messages</a>
+          <NavLink to="/Dialogs">Messages</NavLink>
         </li>
         <li className={stl.listnavpoint}>
-          <a href="#">News</a>
+          <NavLink to="/News">News</NavLink>
         </li>
         <li className={stl.listnavpoint}>
-          <a href="#">Music</a>
+          <NavLink to="/Music">Music</NavLink>
         </li>
         <hr />
         <li className={stl.listnavpoint}>
-          <a href="#">Settings</a>
+          <NavLink to="/Sett">Settings</NavLink>
         </li>
       </ul>
     </nav>

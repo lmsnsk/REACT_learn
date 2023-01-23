@@ -3,7 +3,7 @@ import stl from "./ProfilePage.module.css";
 
 function ProfilePage() {
   return (
-    <div className={stl.maincontent}>
+    <div>
       <div>
         <img
           className={stl.maincontentimg}

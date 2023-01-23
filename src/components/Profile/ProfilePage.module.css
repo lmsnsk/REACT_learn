@@ -1,12 +1,3 @@
-.maincontent {
-  grid-area: cont;
-}
-
-.maincontent li::marker {
-  color: rgb(232, 241, 132);
-  width: 16px;
-}
-
 .maincontentimg {
   width: 100%;
 }

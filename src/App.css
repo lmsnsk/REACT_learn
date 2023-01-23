@@ -11,3 +11,7 @@ p {
   max-width: 1024px;
   margin: 0px auto;
 }
+
+.app-wrapper-content {
+  grid-area: cont;
+}
