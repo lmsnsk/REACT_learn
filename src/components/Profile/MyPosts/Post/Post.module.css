@@ -2,17 +2,21 @@
   position: relative;
   margin-top: 20px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+}
+
+.postText {
+  display: flex;
+}
+
+.postText p {
+  padding-top: 10px;
 }
 
 .postimg {
   width: 40px;
   height: 40px;
   border-radius: 20px;
-}
-
-p {
-  display: inline-block;
-  font-size: 16px;
-  margin-left: 20px;
+  display: inline;
+  margin-right: 20px;
 }

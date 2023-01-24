@@ -1,35 +1,37 @@
 import stl from "./Dialogs.module.css";
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
-// import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function Dialogs(props) {
-  return (
-    // <BrowserRouter>
-    <div className={stl.dialogs}>
-      <div className={stl.dialogsItems}>
-        <DialogItem id="1" name="Петрович" />
-        <DialogItem id="2" name="Эммануэль" />
-        <DialogItem id="3" name="Жмых" />
-        <DialogItem id="4" name="Франсуа" />
-        <DialogItem id="5" name="Колено" />
-      </div>
-      <div className={stl.messages}>
-        {/* <Routes>
-            <Route
-              path="/Message"
-              elemet={<Message text="Привет, чувак! Чокаво?" />}
-            /> */}
+  let dialogsData = [
+    { id: 1, name: "Петрович" },
+    { id: 2, name: "Эммануэль" },
+    { id: 3, name: "Жмых" },
+    { id: 4, name: "Франсуа" },
+    { id: 5, name: "Колено" },
+  ];
 
-        <Message text="Привет, чувак! Чокаво?" />
-        <Message text="Сколько пиво вчера выпил? Признавайся, алкаш" />
-        <Message text="Я завтра не выйду на работу, Семен Петрович" />
-        <Message text="Пипец голова после вчерашнего болит:(" />
-        <Message text="Я обожрался)))))))))" />
-        {/* </Routes> */}
-      </div>
+  let messageData = [
+    { id: 1, messageText: "Привет, чувак! Чокаво?" },
+    { id: 2, messageText: "Сколько пиво вчера выпил? Признавайся, алкаш" },
+    { id: 3, messageText: "Я завтра не выйду на работу, Семен Петрович" },
+    { id: 4, messageText: "Пипец голова после вчерашнего болит:(" },
+    { id: 5, messageText: "Я обожрался)))))))))" },
+  ];
+
+  let dialogsEl = dialogsData.map((name) => (
+    <DialogItem id={name.id} name={name.name} />
+  ));
+
+  let messagesEl = messageData.map((mess) => (
+    <Message id={mess.id} text={mess.messageText} />
+  ));
+
+  return (
+    <div className={stl.dialogs}>
+      <div className={stl.dialogsItems}>{dialogsEl}</div>
+      <div className={stl.messages}>{messagesEl}</div>
     </div>
-    // </BrowserRouter>
   );
 }
 
