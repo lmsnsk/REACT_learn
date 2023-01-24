@@ -6,20 +6,55 @@ function Sidebar() {
     <nav className={stl.sidebar}>
       <ul className={stl.listnav}>
         <li className={stl.listnavpoint}>
-          <NavLink to="/ProfilePage">Profile</NavLink>
+          <NavLink
+            to="/ProfilePage"
+            className={(navData) =>
+              navData.isActive ? stl.active : stl.listnavpoint
+            }
+          >
+            Profile
+          </NavLink>
         </li>
         <li className={stl.listnavpoint}>
-          <NavLink to="/Dialogs">Messages</NavLink>
+          <NavLink
+            to="/Dialogs"
+            className={(navData) =>
+              navData.isActive ? stl.active : stl.listnavpoint
+            }
+          >
+            Messages
+          </NavLink>
         </li>
         <li className={stl.listnavpoint}>
-          <NavLink to="/News">News</NavLink>
+          <NavLink
+            to="/News"
+            className={(navData) =>
+              navData.isActive ? stl.active : stl.listnavpoint
+            }
+          >
+            News
+          </NavLink>
         </li>
         <li className={stl.listnavpoint}>
-          <NavLink to="/Music">Music</NavLink>
+          <NavLink
+            to="/Music"
+            className={(navData) =>
+              navData.isActive ? stl.active : stl.listnavpoint
+            }
+          >
+            Music
+          </NavLink>
         </li>
         <hr />
         <li className={stl.listnavpoint}>
-          <NavLink to="/Sett">Settings</NavLink>
+          <NavLink
+            to="/Sett"
+            className={(navData) =>
+              navData.isActive ? stl.active : stl.listnavpoint
+            }
+          >
+            Settings
+          </NavLink>
         </li>
       </ul>
     </nav>

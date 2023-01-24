@@ -9,8 +9,13 @@
   height: 600px;
 }
 
-.sidebar a {
+.sidebar {
   text-decoration-line: none;
+  color: white;
+}
+
+.active {
+  text-decoration: none;
   color: white;
 }
 
@@ -20,4 +25,6 @@
 
 .listnavpoint {
   list-style: inside none;
+  text-decoration: none;
+  color: rgb(206, 206, 206);
 }

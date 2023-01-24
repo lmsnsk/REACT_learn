@@ -1,0 +1,7 @@
+.dialogs {
+  display: grid;
+  grid-template-columns: 3fr 7fr;
+}
+
+.dialogsItems {
+}
