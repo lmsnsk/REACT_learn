@@ -20,14 +20,14 @@ function App(props) {
               path="/Dialogs"
               element={
                 <Dialogs
-                  dialogsDataApp={props.dialogsDataIndex}
-                  messageDataApp={props.messageDataIndex}
+                  dialogsData={props.dialogsData}
+                  messageData={props.messageData}
                 />
               }
             />
             <Route
               path="/ProfilePage"
-              element={<ProfilePage postsDataApp={props.postsDataIndex} />}
+              element={<ProfilePage postsData={props.postsData} />}
             />
             <Route path="/News" element={<News />} />
             <Route path="/Music" element={<Music />} />

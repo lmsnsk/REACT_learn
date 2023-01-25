@@ -2,7 +2,7 @@ import stl from "./MyPosts.module.css";
 import Post from "./Post/Post";
 
 function MyPosts(props) {
-  let postElemets = props.postsDataMyPosts.map((userPost) => (
+  let postElemets = props.postsData.map((userPost) => (
     <Post
       id={userPost.id}
       likesCount={userPost.likesCount}
