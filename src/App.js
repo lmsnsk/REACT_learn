@@ -8,7 +8,7 @@ import News from "./components/News/News";
 import Sett from "./components/Sett/Sett";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-function App() {
+function App(props) {
   return (
     <BrowserRouter>
       <div className="app-wrapper">
@@ -16,8 +16,19 @@ function App() {
         <Sidebar />
         <div className="app-wrapper-content">
           <Routes>
-            <Route path="/Dialogs" element={<Dialogs />} />
-            <Route path="/ProfilePage" element={<ProfilePage />} />
+            <Route
+              path="/Dialogs"
+              element={
+                <Dialogs
+                  dialogsDataApp={props.dialogsDataIndex}
+                  messageDataApp={props.messageDataIndex}
+                />
+              }
+            />
+            <Route
+              path="/ProfilePage"
+              element={<ProfilePage postsDataApp={props.postsDataIndex} />}
+            />
             <Route path="/News" element={<News />} />
             <Route path="/Music" element={<Music />} />
             <Route path="/Sett" element={<Sett />} />

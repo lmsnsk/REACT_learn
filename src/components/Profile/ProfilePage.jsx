@@ -2,11 +2,11 @@ import MyPosts from "./MyPosts/MyPosts";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 import stl from "./ProfilePage.module.css";
 
-function ProfilePage() {
+function ProfilePage(props) {
   return (
     <div>
       <ProfileInfo />
-      <MyPosts />
+      <MyPosts postsDataMyPosts={props.postsDataApp} />
     </div>
   );
 }
