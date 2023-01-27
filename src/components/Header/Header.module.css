@@ -5,6 +5,10 @@
   padding-top: 5px;
 }
 
+.logoLink {
+  display: inline-block;
+}
+
 .logoimg {
   height: 50px;
   pointer-events: none;

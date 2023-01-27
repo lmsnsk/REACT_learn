@@ -3,11 +3,11 @@ import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
 
 function Dialogs(props) {
-  let dialogsEl = props.dialogsData.map((name) => (
+  let dialogsEl = props.state.messagesPage.dialogsData.map((name) => (
     <DialogItem id={name.id} name={name.name} />
   ));
 
-  let messagesEl = props.messageData.map((mess) => (
+  let messagesEl = props.state.messagesPage.messagesData.map((mess) => (
     <Message id={mess.id} text={mess.messageText} />
   ));
 
