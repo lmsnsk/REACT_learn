@@ -1,0 +1,15 @@
+.friend {
+  display: inline-block;
+  text-align: center;
+}
+
+.ava {
+  width: 50px;
+  height: 50px;
+}
+
+.friendName {
+  font-size: 12px;
+  text-align: center;
+  color: rgb(218, 218, 218);
+}

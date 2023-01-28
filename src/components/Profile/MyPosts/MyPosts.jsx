@@ -1,5 +1,6 @@
 import stl from "./MyPosts.module.css";
 import Post from "./Post/Post";
+import React from "react";
 
 function MyPosts(props) {
   let postElemets = props.postsData.map((userPost) => (
@@ -11,6 +12,13 @@ function MyPosts(props) {
     />
   ));
 
+  let newPostElement = React.createRef();
+
+  function addPost() {
+    let text = newPostElement.current.value;
+    alert(text);
+  }
+
   return (
     <div className={stl.posts}>
       <p className={stl.poststitle}>My posts</p>
@@ -19,14 +27,14 @@ function MyPosts(props) {
           <textarea
             className={stl.input}
             name="enterpost"
-            id="enterpost"
+            ref={newPostElement}
             cols="70"
             rows="3"
             placeholder="Ваши новости..."
           ></textarea>
           <button className={stl.btnh} type="submit"></button>
-          <button className={stl.btn} type="submit">
-            Отправить
+          <button onClick={addPost} className={stl.btn} type="submit">
+            Add post
           </button>
         </form>
         {postElemets}

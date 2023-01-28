@@ -1,7 +1,8 @@
 import { NavLink } from "react-router-dom";
 import stl from "./Sidebar.module.css";
+import Friends from "./Friends/Friends";
 
-function Sidebar() {
+function Sidebar(props) {
   return (
     <nav className={stl.sidebar}>
       <ul className={stl.listnav}>
@@ -55,6 +56,11 @@ function Sidebar() {
           >
             Settings
           </NavLink>
+        </li>
+        <hr />
+        <li>
+          <p className={stl.title}>Friends:</p>
+          <Friends state={props.state} />
         </li>
       </ul>
     </nav>
