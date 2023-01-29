@@ -10,6 +10,8 @@
   overflow: hidden;
   text-decoration-line: none;
   color: white;
+  position: sticky;
+  top: 10px;
 }
 
 .active {
@@ -22,7 +24,6 @@
 }
 
 .listnavpoint {
-  list-style: inside none;
   text-decoration: none;
   color: rgb(206, 206, 206);
 }

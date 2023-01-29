@@ -14,9 +14,13 @@ function MyPosts(props) {
 
   let newPostElement = React.createRef();
 
-  function addPost() {
+  function addPostClick() {
+    props.addPost();
+  }
+
+  function onPostChange() {
     let text = newPostElement.current.value;
-    alert(text);
+    props.updateNewPostText(text);
   }
 
   return (
@@ -25,15 +29,15 @@ function MyPosts(props) {
       <div>
         <form action="">
           <textarea
+            onChange={onPostChange}
+            value={props.newPostText}
             className={stl.input}
             name="enterpost"
             ref={newPostElement}
             cols="70"
             rows="3"
-            placeholder="Ваши новости..."
-          ></textarea>
-          <button className={stl.btnh} type="submit"></button>
-          <button onClick={addPost} className={stl.btn} type="submit">
+          />
+          <button onClick={addPostClick} className={stl.btn} type="submit">
             Add post
           </button>
         </form>

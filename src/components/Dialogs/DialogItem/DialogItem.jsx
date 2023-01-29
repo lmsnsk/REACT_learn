@@ -10,7 +10,10 @@ function DialogItem(props) {
           navData.isActive ? stl.active : stl.userDialogNav
         }
       >
-        {props.name}
+        <div className={stl.avatar}>
+          <img src={props.url} alt="avatar" />
+        </div>
+        <p> {props.name}</p>
       </NavLink>
     </div>
   );

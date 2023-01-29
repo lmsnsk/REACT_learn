@@ -23,7 +23,7 @@
   font-size: 20px;
   float: right;
   margin-right: 0;
-  background-color: rgb(121, 224, 161);
+  background-color: green;
   border-style: none;
   color: rgb(255, 255, 255);
   font-weight: 600;
@@ -31,10 +31,4 @@
 
 .btn:hover {
   color: black;
-}
-
-.btnh {
-  font-size: 16px;
-  border-width: 0;
-  background-color: rgb(255, 255, 255);
 }

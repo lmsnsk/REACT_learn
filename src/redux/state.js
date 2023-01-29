@@ -1,3 +1,5 @@
+import renderEntireTree from "../render";
+
 let state = {
   profilePage: {
     postsData: [
@@ -26,14 +28,35 @@ let state = {
         url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5gLH4En3BnVSk8UxNmPTU5DhXTNdK5QJQBw&usqp=CAU",
       },
     ],
+    newPostText: "lmsnsk",
   },
   messagesPage: {
     dialogsData: [
-      { id: 1, name: "Петрович" },
-      { id: 2, name: "Эммануэль" },
-      { id: 3, name: "Жмых" },
-      { id: 4, name: "Франсуа" },
-      { id: 5, name: "Колено" },
+      {
+        id: 1,
+        name: "Петрович",
+        url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoiJ6m6tZBcv9FLCkSh7pHAmpRLREJa8SiOw&usqp=CAU",
+      },
+      {
+        id: 2,
+        name: "Эммануэль",
+        url: "https://i.pinimg.com/236x/f3/fe/1d/f3fe1dd69bf54aa4822e9aab096afc62.jpg",
+      },
+      {
+        id: 3,
+        name: "Жмых",
+        url: "https://img2.akspic.ru/previews/3/9/7/9/6/169793/169793-kalmar-netfliks-rukav-golovnoj_ubor-astronomicheskij_obekt-500x.jpg",
+      },
+      {
+        id: 4,
+        name: "Франсуа",
+        url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT20m9wKPaT9wvUrI4y8Wshme78G5FETBf_SQ&usqp=CAU",
+      },
+      {
+        id: 5,
+        name: "Колено",
+        url: "https://avatarko.ru/img/kartinka/1/Crazy_Frog.jpg",
+      },
     ],
     messagesData: [
       { id: 1, messageText: "Привет, чувак! Чокаво?" },
@@ -42,7 +65,43 @@ let state = {
       { id: 4, messageText: "Пипец голова после вчерашнего болит:(" },
       { id: 5, messageText: "Я обожрался)))))))))" },
     ],
+    newMessageText: "Новое сообщение",
   },
 };
+
+window.state = state;
+
+export function addPost() {
+  let newPost = {
+    id: 5,
+    likesCount: 0,
+    text: state.profilePage.newPostText,
+    url: "#",
+  };
+  state.profilePage.postsData.push(newPost);
+  state.profilePage.newPostText = "";
+
+  renderEntireTree(state);
+}
+
+export function updateNewPostText(newText) {
+  state.profilePage.newPostText = newText;
+
+  renderEntireTree(state);
+}
+
+export function addMessage() {
+  let newMessage = { id: 5, messageText: state.messagesPage.newMessageText };
+  state.messagesPage.messagesData.push(newMessage);
+  state.messagesPage.newMessageText = "";
+
+  renderEntireTree(state);
+}
+
+export function updateNewMessageText(newMessage) {
+  state.messagesPage.newMessageText = newMessage;
+
+  renderEntireTree(state);
+}
 
 export default state;
