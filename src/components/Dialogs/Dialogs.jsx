@@ -28,15 +28,17 @@ function Dialogs(props) {
       <div className={stl.dialogsItems}>{dialogsEl}</div>
       <div className={stl.messages}>
         {messagesEl}
-        <textarea
-          onChange={onMessageChange}
-          name="enterMessage"
-          className={stl.enterMessage}
-          ref={newMessageElement}
-          cols="80"
-          rows="4"
-          placeholder="Введите сообщение..."
-        />
+        <div>
+          <textarea
+            ref={newMessageElement}
+            className={stl.enterMessage}
+            onChange={onMessageChange}
+            cols="80"
+            rows="4"
+            value={props.newMessageText}
+            name="entermessage"
+          />
+        </div>
         <button className={stl.btn} onClick={addMessageClick}>
           Send
         </button>

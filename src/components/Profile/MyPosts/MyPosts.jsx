@@ -26,23 +26,24 @@ function MyPosts(props) {
   return (
     <div className={stl.posts}>
       <p className={stl.poststitle}>My posts</p>
+
       <div>
-        <form action="">
-          <textarea
-            onChange={onPostChange}
-            value={props.newPostText}
-            className={stl.input}
-            name="enterpost"
-            ref={newPostElement}
-            cols="70"
-            rows="3"
-          />
-          <button onClick={addPostClick} className={stl.btn} type="submit">
-            Add post
-          </button>
-        </form>
-        {postElemets}
+        <textarea
+          onChange={onPostChange}
+          value={props.newPostText}
+          className={stl.input}
+          name="enterpost"
+          ref={newPostElement}
+          cols="70"
+          rows="3"
+        />
       </div>
+      <div>
+        <button className={stl.btn} onClick={addPostClick}>
+          Send post
+        </button>
+      </div>
+      {postElemets}
     </div>
   );
 }
