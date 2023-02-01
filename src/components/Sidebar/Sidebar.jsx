@@ -60,7 +60,7 @@ function Sidebar(props) {
         <hr />
         <li>
           <p className={stl.title}>Friends:</p>
-          <Friends state={props.state} />
+          <Friends store={props.store} />
         </li>
       </ul>
     </nav>

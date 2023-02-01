@@ -4,23 +4,27 @@ import Message from "./Message/Message";
 import React from "react";
 
 function Dialogs(props) {
-  let dialogsEl = props.state.messagesPage.dialogsData.map((name) => (
-    <DialogItem id={name.id} name={name.name} url={name.url} />
-  ));
+  let dialogsEl = props.store
+    .getState()
+    .messagesPage.dialogsData.map((name) => (
+      <DialogItem id={name.id} name={name.name} url={name.url} />
+    ));
 
-  let messagesEl = props.state.messagesPage.messagesData.map((mess) => (
-    <Message id={mess.id} text={mess.messageText} />
-  ));
+  let messagesEl = props.store
+    .getState()
+    .messagesPage.messagesData.map((mess) => (
+      <Message id={mess.id} text={mess.messageText} />
+    ));
 
   let newMessageElement = React.createRef();
 
   function addMessageClick() {
-    props.addMessage();
+    props.store.addMessage();
   }
 
   function onMessageChange() {
     let message = newMessageElement.current.value;
-    props.updateNewMessageText(message);
+    props.store.updateNewMessageText(message);
   }
 
   return (
@@ -35,7 +39,7 @@ function Dialogs(props) {
             onChange={onMessageChange}
             cols="80"
             rows="4"
-            value={props.newMessageText}
+            value={props.store.getState().messagesPage.newMessageText}
             name="entermessage"
           />
         </div>

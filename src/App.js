@@ -13,28 +13,13 @@ function App(props) {
   return (
     <div className="app-wrapper">
       <Header />
-      <Sidebar state={props.state} />
+      <Sidebar store={props.store} />
       <div className="app-wrapper-content">
         <Routes>
-          <Route
-            path="/Dialogs"
-            element={
-              <Dialogs
-                state={props.state}
-                addMessage={props.addMessage}
-                updateNewMessageText={props.updateNewMessageText}
-              />
-            }
-          />
+          <Route path="/Dialogs" element={<Dialogs store={props.store} />} />
           <Route
             path="/ProfilePage"
-            element={
-              <ProfilePage
-                state={props.state}
-                addPost={props.addPost}
-                updateNewPostText={props.updateNewPostText}
-              />
-            }
+            element={<ProfilePage store={props.store} />}
           />
           <Route path="/News" element={<News />} />
           <Route path="/Music" element={<Music />} />

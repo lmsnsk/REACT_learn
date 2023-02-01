@@ -3,34 +3,35 @@ import Post from "./Post/Post";
 import React from "react";
 
 function MyPosts(props) {
-  let postElemets = props.postsData.map((userPost) => (
-    <Post
-      id={userPost.id}
-      likesCount={userPost.likesCount}
-      text={userPost.text}
-      url={userPost.url}
-    />
-  ));
+  let postElemets = props.store
+    .getState()
+    .profilePage.postsData.map((userPost) => (
+      <Post
+        id={userPost.id}
+        likesCount={userPost.likesCount}
+        text={userPost.text}
+        url={userPost.url}
+      />
+    ));
 
   let newPostElement = React.createRef();
 
   function addPostClick() {
-    props.addPost();
+    props.store.addPost();
   }
 
   function onPostChange() {
     let text = newPostElement.current.value;
-    props.updateNewPostText(text);
+    props.store.updateNewPostText(text);
   }
 
   return (
     <div className={stl.posts}>
       <p className={stl.poststitle}>My posts</p>
-
       <div>
         <textarea
           onChange={onPostChange}
-          value={props.newPostText}
+          value={props.store.getState().profilePage.newPostText}
           className={stl.input}
           name="enterpost"
           ref={newPostElement}

@@ -7,12 +7,7 @@ function ProfilePage(props) {
   return (
     <div className={stl.div}>
       <ProfileInfo />
-      <MyPosts
-        postsData={props.state.profilePage.postsData}
-        newPostText={props.state.profilePage.newPostText}
-        addPost={props.addPost}
-        updateNewPostText={props.updateNewPostText}
-      />
+      <MyPosts store={props.store} />
     </div>
   );
 }
