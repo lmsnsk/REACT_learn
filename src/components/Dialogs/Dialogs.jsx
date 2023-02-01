@@ -3,7 +3,7 @@ import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
 import React from "react";
 import {
-  addMessageActionCreator,
+  sendMessageActionCreator,
   newMessageTextActionCreator,
 } from "../../redux/state";
 
@@ -20,14 +20,15 @@ function Dialogs(props) {
       <Message id={mess.id} text={mess.messageText} />
     ));
 
-  let newMessageElement = React.createRef();
+  //let newMessageElement = React.createRef();
 
-  function addMessageClick() {
-    props.store.dispatch(addMessageActionCreator());
+  function onSendMessageClick() {
+    props.store.dispatch(sendMessageActionCreator());
   }
 
-  function onMessageChange() {
-    let message = newMessageElement.current.value;
+  function onTextMessageChange(event) {
+    let message = event.target.value;
+    //let message = newMessageElement.current.value;
     props.store.dispatch(newMessageTextActionCreator(message));
   }
 
@@ -38,16 +39,17 @@ function Dialogs(props) {
         {messagesEl}
         <div>
           <textarea
-            ref={newMessageElement}
+            //ref={newMessageElement}
             className={stl.enterMessage}
-            onChange={onMessageChange}
+            onChange={onTextMessageChange}
             cols="80"
             rows="4"
             value={props.store.getState().messagesPage.newMessageText}
             name="entermessage"
+            placeholder="Enter yor message..."
           />
         </div>
-        <button className={stl.btn} onClick={addMessageClick}>
+        <button className={stl.btn} onClick={onSendMessageClick}>
           Send
         </button>
       </div>

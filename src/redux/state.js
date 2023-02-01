@@ -1,6 +1,9 @@
+import profileReducer from "./profile-reducer";
+import dialogsReducer from "./dialogs-reducer copy";
+
 const ADD_POST = "ADD-POST";
 const NEW_POST_TEXT = "NEW-POST-TEXT";
-const ADD_MESSAGE = "ADD-MESSAGE";
+const SEND_MESSAGE = "SEND-MESSAGE";
 const NEW_MESSAGE_TEXT = "NEW-MESSAGE-TEXT";
 
 let store = {
@@ -32,7 +35,7 @@ let store = {
           url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5gLH4En3BnVSk8UxNmPTU5DhXTNdK5QJQBw&usqp=CAU",
         },
       ],
-      newPostText: "lmsnsk",
+      newPostText: "",
     },
     messagesPage: {
       dialogsData: [
@@ -69,7 +72,7 @@ let store = {
         { id: 4, messageText: "Пипец голова после вчерашнего болит:(" },
         { id: 5, messageText: "Я обожрался)))))))))" },
       ],
-      newMessageText: "Новое сообщение",
+      newMessageText: "",
     },
   },
   _callSubscriber() {
@@ -114,7 +117,16 @@ let store = {
     this._callSubscriber();
   },*/
   dispatch(action) {
-    if (action.type === "ADD-POST") {
+    this.getState().profilePage = profileReducer(
+      this.getState().profilePage,
+      action
+    );
+    this.getState().messagesPage = dialogsReducer(
+      this.getState().messagesPage,
+      action
+    );
+
+    /*if (action.type === "ADD-POST") {
       let newPost = {
         id: 5,
         likesCount: 0,
@@ -128,7 +140,7 @@ let store = {
     } else if (action.type === "NEW-POST-TEXT") {
       this.getState().profilePage.newPostText = action.newText;
       this._callSubscriber();
-    } else if (action.type === "ADD-MESSAGE") {
+    } else if (action.type === "SEND-MESSAGE") {
       let newMessage = {
         id: 5,
         messageText: this.getState().messagesPage.newMessageText,
@@ -141,7 +153,8 @@ let store = {
       this.getState().messagesPage.newMessageText = action.newMessage;
 
       this._callSubscriber();
-    }
+    }*/
+    this._callSubscriber();
   },
 };
 
@@ -153,8 +166,8 @@ export function newPostTextActionCreator(text) {
   return { type: NEW_POST_TEXT, newText: text };
 }
 
-export function addMessageActionCreator() {
-  return { type: ADD_MESSAGE };
+export function sendMessageActionCreator() {
+  return { type: SEND_MESSAGE };
 }
 
 export function newMessageTextActionCreator(message) {

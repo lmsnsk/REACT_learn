@@ -18,14 +18,15 @@ function MyPosts(props) {
       />
     ));
 
-  let newPostElement = React.createRef();
+  //let newPostElement = React.createRef();
 
   function addPostClick() {
     props.store.dispatch(addPostActionCreator());
   }
 
-  function onPostChange() {
-    let text = newPostElement.current.value;
+  function onPostChange(event) {
+    //let text = newPostElement.current.value;
+    let text = event.target.value;
     props.store.dispatch(newPostTextActionCreator(text));
   }
 
@@ -38,7 +39,7 @@ function MyPosts(props) {
           value={props.store.getState().profilePage.newPostText}
           className={stl.input}
           name="enterpost"
-          ref={newPostElement}
+          //ref={newPostElement}
           cols="70"
           rows="3"
         />
