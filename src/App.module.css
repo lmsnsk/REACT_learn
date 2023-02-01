@@ -2,7 +2,7 @@ p {
   margin: 0;
 }
 
-.app-wrapper {
+.appWrapper {
   display: grid;
   grid-template-areas: "head head" "side cont";
   grid-template-rows: 60px 1fr;
@@ -12,6 +12,6 @@ p {
   margin: 0px auto;
 }
 
-.app-wrapper-content {
+.appWrapperContent {
   grid-area: cont;
 }

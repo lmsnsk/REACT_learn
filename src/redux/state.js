@@ -1,3 +1,8 @@
+const ADD_POST = "ADD-POST";
+const NEW_POST_TEXT = "NEW-POST-TEXT";
+const ADD_MESSAGE = "ADD-MESSAGE";
+const NEW_MESSAGE_TEXT = "NEW-MESSAGE-TEXT";
+
 let store = {
   _state: {
     profilePage: {
@@ -67,13 +72,16 @@ let store = {
       newMessageText: "Новое сообщение",
     },
   },
-  getState() {
-    return this._state;
-  },
   _callSubscriber() {
     console.log("Hey");
   },
-  addPost() {
+  getState() {
+    return this._state;
+  },
+  subscribe(observer) {
+    this._callSubscriber = observer;
+  },
+  /*addPost() {
     let newPost = {
       id: 5,
       likesCount: 0,
@@ -104,11 +112,54 @@ let store = {
     this.getState().messagesPage.newMessageText = newMessage;
 
     this._callSubscriber();
-  },
-  subscribe(observer) {
-    this._callSubscriber = observer;
+  },*/
+  dispatch(action) {
+    if (action.type === "ADD-POST") {
+      let newPost = {
+        id: 5,
+        likesCount: 0,
+        text: this.getState().profilePage.newPostText,
+        url: "https://www.meme-arsenal.com/memes/50569ac974c29121ff9075e45a334942.jpg",
+      };
+      this.getState().profilePage.postsData.push(newPost);
+      this.getState().profilePage.newPostText = "";
+
+      this._callSubscriber();
+    } else if (action.type === "NEW-POST-TEXT") {
+      this.getState().profilePage.newPostText = action.newText;
+      this._callSubscriber();
+    } else if (action.type === "ADD-MESSAGE") {
+      let newMessage = {
+        id: 5,
+        messageText: this.getState().messagesPage.newMessageText,
+      };
+      this.getState().messagesPage.messagesData.push(newMessage);
+      this.getState().messagesPage.newMessageText = "";
+
+      this._callSubscriber();
+    } else if (action.type === "NEW-MESSAGE-TEXT") {
+      this.getState().messagesPage.newMessageText = action.newMessage;
+
+      this._callSubscriber();
+    }
   },
 };
+
+export function addPostActionCreator() {
+  return { type: ADD_POST };
+}
+
+export function newPostTextActionCreator(text) {
+  return { type: NEW_POST_TEXT, newText: text };
+}
+
+export function addMessageActionCreator() {
+  return { type: ADD_MESSAGE };
+}
+
+export function newMessageTextActionCreator(message) {
+  return { type: NEW_MESSAGE_TEXT, newMessage: message };
+}
 
 window.store = store;
 
